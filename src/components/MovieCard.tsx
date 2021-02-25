@@ -1,9 +1,10 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 type Props = {
   movie: Movie;
 };
-type Movie = {
+export type Movie = {
   Poster: string;
   Title: string;
   Type: string;
@@ -11,10 +12,19 @@ type Movie = {
   imdbID: string;
 };
 
-export default function MovieCard(props: Props) {
+export default function MovieCard({ movie }: Props) {
   return (
-    <div>
-      {props.movie.Title} ({props.movie.Year})
+    <div
+      style={{
+        width: "25%",
+        padding: "10px",
+        boxSizing: "border-box",
+      }}
+    >
+      <Link to={`/movie/${movie.imdbID}`}>
+        {movie.Title} ({movie.Year})
+      </Link>
+      <img src={movie.Poster} alt={`${movie.Title}'s poster`} />
     </div>
   );
 }

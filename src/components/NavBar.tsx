@@ -3,13 +3,13 @@ import { NavLink } from "react-router-dom";
 
 export default function NavBar() {
   return (
-    <div>
+    <div className="mt-5 mb-3">
       <NavLink
         to="/discover"
         activeStyle={{
           fontWeight: "bold",
-          color: "red",
         }}
+        className="btn btn-outline-dark mr-3"
       >
         Discover Movies
       </NavLink>
@@ -17,17 +17,18 @@ export default function NavBar() {
         to="/about"
         activeStyle={{
           fontWeight: "bold",
-          color: "red",
         }}
+        className="btn btn-outline-dark mr-3"
       >
         About
       </NavLink>
       <NavLink
+        exact
         to="/"
         activeStyle={{
           fontWeight: "bold",
-          color: "red",
         }}
+        className="btn btn-outline-dark mr-3"
       >
         Home
       </NavLink>
